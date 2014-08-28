@@ -39,6 +39,7 @@
             <% end %>
             <span class="name"><%= beer.name %></span>
             <span class="description"><%= beer.description %></span>
+            <span class="abv">Alcohol by volume: <%= beer.abv %>%</span>
           </li>
         <% end if @beers %>
         </ul>

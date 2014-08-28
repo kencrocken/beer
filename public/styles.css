@@ -95,6 +95,13 @@ input.search:focus {
   margin-left: 120px;
 }
 
+.beer span.abv {
+  display: block;
+  margin-left: 120px;
+  font-size: .7em;
+  color: red;
+}
+
 footer {
   color: #888;
   font-size: 0.9em;
