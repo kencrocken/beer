@@ -7,6 +7,7 @@ class Beer
       b.description = json["description"]
       b.image_url = json["labels"]["medium"] if json["labels"]
       b.abv = json["abv"]
+      b.id = json["id"]
     end
   end
 end
