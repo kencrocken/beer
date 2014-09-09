@@ -1,5 +1,5 @@
 class Beer
-  attr_accessor :name, :image_url, :description, :abv
+  attr_accessor :name, :image_url, :description, :abv, :id
 
   def self.from_json(json)
     Beer.new.tap do |b|
