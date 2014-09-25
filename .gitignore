@@ -1,2 +1,5 @@
 .DS_store
 .env
+.sass-cache
+public/styles.scss
+bourbon
