@@ -11,8 +11,16 @@ set :public_folder, File.join(File.dirname(__FILE__), 'public')
 
 get '/' do
   @query = params[:q]
+
   do_search @query if @query
+
   erb :index
+end
+
+get '/show' do
+  @beerid = params[:beerid]
+  do_beer @beerid if @beerid
+  erb :show
 end
 
 def do_search(q)
@@ -24,6 +32,17 @@ def do_search(q)
     @error = response.body
   end
 end
+
+def do_beer(beerid)
+  response = api.show_beer(beerid)
+  if response.code == 200
+    logger.info response.body
+    @beers = response["data"]
+  else
+    @error = response.body
+  end
+end
+
 
 def parse_beers(response)
   return [] unless response["data"]

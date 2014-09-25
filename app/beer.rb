@@ -10,4 +10,14 @@ class Beer
       b.id = json["id"]
     end
   end
+
+  def self.single_beer(json)
+    Beer.new.tap do |b|
+      b.name = json["name"]
+      b.description = json["description"]
+      b.image_url = json["labels"]["medium"] if json["labels"]
+      b.abv = json["abv"]
+      b.id = json["id"] 
+    end   
+  end
 end

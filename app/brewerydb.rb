@@ -16,4 +16,10 @@ class Brewerydb
       format: 'json'
     }
   end
+
+  def show_beer(beerid)
+    self.class.get "/beer/#{beerid}?key=#{@api_key}", query: { format: 'json' }
+  end
 end
+
+# response = HTTParty.get("http://api.brewerydb.com/v2/beer/#{beerid}?key=#{@api_key}")
